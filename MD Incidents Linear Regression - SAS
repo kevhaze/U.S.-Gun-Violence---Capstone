@@ -1,0 +1,8 @@
+ods noproctile;
+ods graphics / imagemap=on;
+
+proc reg data=WORK.IMPORT alpha=0.05 plots(only maxpoints=none)=(diagnost
+    residuals fitplot observedbypredicted);
+  model number=date /;
+  run;
+quit;
