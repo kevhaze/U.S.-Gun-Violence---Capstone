@@ -1,0 +1,15 @@
+%matplotlib inline
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+gundata = pd.read_csv('gundata.csv')
+print(gundata.head())
+
+
+from collections import Counter
+Counter = Counter(gundata['state'])
+most_occur = Counter.most_common(5)
+print(most_occur)
+
+gundataFreq = pd.read_csv('gundata_mostfreqstates.csv')
+gundataFreq['state'].value_counts().sort_index().plot.barh(color='green')
