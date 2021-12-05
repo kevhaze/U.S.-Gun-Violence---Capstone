@@ -1,0 +1,8 @@
+ods noproctitle;
+ods graphics / imagemap=on;
+
+proc corr data=WORK.IMPORT pearson plots(maxpoints=none)=scatter(ellipse=none
+    nvar=2 nwith=2)
+  var participant_age;
+  with n_guns_involved;
+run;
