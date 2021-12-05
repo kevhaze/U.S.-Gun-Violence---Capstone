@@ -1,0 +1,5 @@
+gundataYearlyTotals <- read.csv("gundata_yearlyTotals.csv", header = TRUE)
+
+qplot(gundataYearlyTotals$Year, gundataYearlyTotals$Incidents, geom=c("point", "smooth")) + 
+  scale_x_continuous("Year", breaks = c(2014, 2015, 2016)) + 
+  scale_y_continuous("Incidents", limits = c(47000,63000))
